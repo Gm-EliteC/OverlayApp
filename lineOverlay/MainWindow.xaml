@@ -1,0 +1,90 @@
+﻿<Window x:Class="VerticalLineOverlay.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Vertical Line Overlay"
+        WindowStyle="None"
+        WindowState="Maximized"
+        AllowsTransparency="True"
+        Background="Transparent"
+        Topmost="True"
+        ShowInTaskbar="False">
+
+
+    <Grid>
+
+
+        <Border x:Name="DraggableContainer" Background="Transparent" BorderBrush="Transparent" BorderThickness="1"  Width="1106" Height="150" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="500,500,0,0">
+            <StackPanel>
+                <Grid x:Name="MainGrid">
+                    <Image x:Name="DragIcon" Source="\Images\drag-icon.png" Width="40" Height="40"
+                       HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,3,0,0" Visibility="Visible" 
+                       Cursor="SizeAll" OpacityMask="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" />
+                    <TextBox x:Name="SpinInputBox" Width="56" Height="28" Text="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,10,0,0"/>
+                    <Button Content="OK" Width="100" Foreground="White" Background="Blue" FontWeight="Bold" Height="41" Click="SpinAndCurveOkButton" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,71,0,0"/>
+                    <TextBox x:Name="AimTextBox" Width="74" Height="30" FontSize="16" TextAlignment="Center" HorizontalAlignment="Left"  VerticalAlignment="Top" TextChanged="AimTextBox_TextChanged" Margin="290,76,0,0"/>
+                    <Button Content="Reset Spin 0" Click="SetSpinZero_Click" Background ="LightSeaGreen"  Height="40" Width="104" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="170,12,0,0"/>
+                    <TextBlock Text="Spin" FontSize="24" Foreground="DarkBlue" FontWeight="Bold" HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="42,3,0,0"/>
+                    <TextBox x:Name="CurveInput" TextWrapping="Wrap" Text="" Width="56" Height="29" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,38,0,0"/>
+                    <TextBlock Name="Caliper" Text="Caliper" FontSize="40" Foreground="LawnGreen" Visibility= "Collapsed" IsHitTestVisible="False"
+           
+           TextWrapping="Wrap"
+           HorizontalAlignment="Left" VerticalAlignment="Top" Margin="473,48,0,0">
+                        <TextBlock.Effect>
+                            <DropShadowEffect ShadowDepth="1" 
+                          Color="Black" 
+                          Opacity="1.8" 
+                          BlurRadius="4"/>
+                        </TextBlock.Effect>
+                    </TextBlock>
+                    <TextBlock Name="ShotType" Text="ShotType" FontSize="40" Foreground="Gold" Visibility="Collapsed" TextWrapping="Wrap" VerticalAlignment="Top" IsHitTestVisible="False" Margin="558,12,0,0" HorizontalAlignment="Left" Width="301">
+                        <TextBlock.Effect>
+                            <DropShadowEffect ShadowDepth="1" 
+                          Color="Black" 
+                          Opacity="1.8" 
+                          BlurRadius="4"/>
+                        </TextBlock.Effect>
+                    </TextBlock>
+                    <TextBlock x:Name= "PS" Text="PS" FontSize="40" Foreground="LawnGreen" Visibility= "Collapsed"
+                TextWrapping="Wrap"
+                HorizontalAlignment="Left" VerticalAlignment="Top" Margin="601,49,0,0">
+                        <TextBlock.Effect>
+                            <DropShadowEffect ShadowDepth="1" 
+                        Color="Black" 
+                        Opacity="1.8" 
+                        BlurRadius="4"/>
+                        </TextBlock.Effect>
+                    </TextBlock>
+                    <TextBlock x:Name="ClubType" IsHitTestVisible="False" Text="Club" FontSize="40" Foreground="Gold" Visibility="Collapsed" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="477,13,0,0">
+                        <TextBlock.Effect>
+                            <DropShadowEffect ShadowDepth="1" 
+                        Color="Black" 
+                        Opacity="1.8" 
+                        BlurRadius="4"/>
+                        </TextBlock.Effect>
+                    </TextBlock>
+                    <TextBlock FontSize="16" Foreground="Red" FontWeight="Bold" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="295,53,0,0"><Run Text="Enter PB"/><LineBreak/><Run/></TextBlock>
+                    <TextBlock Text="Curve" FontSize="24" Foreground="Indigo" FontWeight="Bold" RenderTransformOrigin="0.099,0.345" HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="33,30,0,0"/>
+                </Grid>
+
+             
+            </StackPanel>
+
+
+            
+
+        </Border>
+        <Canvas x:Name="MainCanvas"
+                IsHitTestVisible="False" Margin="0,0,-562,-18"
+                SnapsToDevicePixels="True">
+            <Line x:Name ="VerticalLineLayer"
+                      Stroke="Red"
+                      StrokeThickness="1"
+                      X1="0" Y1="0" X2="0" Y2="130"
+                      Opacity="1.0"
+                      Visibility="Visible"/>
+           
+        </Canvas>
+    </Grid>
+
+
+</Window>
