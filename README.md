@@ -3,7 +3,7 @@
 Usage:
 Compiled: You will need to place all of you compiled files in to the folder Resources in PangYaC (exluding the LineOverlay.pdb)
 Debugging: Simply it run it before PangYaC. The Windows Forms app will attemp to start a nice instance if is not there. 
-# Pangya Shot Calculator - Windows Forms Edition
+# LineOverlay - Windows Presentation Foundation (WPF)
 
 This application is inspired by **XPangya** and integrates the **Acrisio Pangya Calculator** into a modern **Windows Forms** interface. The goal is to deliver a high-resolution, user-friendly tool for players of the online golf game **Pangya** to easily calculate and optimize their shots.
 
